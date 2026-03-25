@@ -1,0 +1,24 @@
+{
+  "mailboxes": [
+    {
+      "emailAddress": "info@firma.de",
+      "enabled": true,
+      "signatureFile": "info.htm"
+    },
+    {
+      "emailAddress": "support@firma.de",
+      "enabled": true,
+      "signatureFile": "support.htm"
+    }
+  ],
+  "internalDomains": ["@firma.de", "@tochter.de"],
+  "showWarningForExternal": true,
+  "signatureManagementEnabled": true,
+  "signaturesBaseUrl": "https://firma.sharepoint.com/sites/IT/Shared%20Documents/SmartMailManager/Signatures",
+  "defaultSignatureFile": "default.htm",
+  "replySignaturePosition": "BeforeQuote",
+  "enableDebugLogging": false,
+  "userProfileOverrides": {
+    "Fax": "+49 123 456789"
+  }
+}

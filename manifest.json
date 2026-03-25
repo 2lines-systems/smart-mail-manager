@@ -1,0 +1,114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "version": "1.0.0",
+  "manifestVersion": "devPreview",
+  "name": {
+    "short": "Smart Mail Manager",
+    "full": "Smart Mail Manager - Signaturverwaltung"
+  },
+  "description": {
+    "short": "Automatische Signaturverwaltung fuer Shared Mailboxes",
+    "full": "Verwaltet HTML-Signaturen automatisch basierend auf dem aktiven Absender. Unterstuetzt Shared Mailboxes mit zentraler Konfiguration und Platzhalter-Ersetzung aus dem Benutzerprofil."
+  },
+  "developer": {
+    "name": "2lines",
+    "websiteUrl": "https://2lines.de",
+    "privacyUrl": "https://2lines.de/privacy",
+    "termsOfUseUrl": "https://2lines.de/terms"
+  },
+  "icons": {
+    "outline": "assets/icon-outline.png",
+    "color": "assets/icon-color.png"
+  },
+  "accentColor": "#0078D4",
+  "extensions": [
+    {
+      "requirements": {
+        "scopes": ["mail"],
+        "capabilities": [
+          {
+            "name": "Mailbox",
+            "minVersion": "1.13"
+          }
+        ]
+      },
+      "runtimes": [
+        {
+          "requirements": {
+            "capabilities": [
+              {
+                "name": "Mailbox",
+                "minVersion": "1.13"
+              }
+            ]
+          },
+          "id": "eventsRuntime",
+          "type": "general",
+          "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/dist/commands/commands.js"
+          },
+          "lifetime": "short",
+          "actions": [
+            {
+              "id": "onNewMessageComposeHandler",
+              "type": "executeFunction"
+            },
+            {
+              "id": "onMessageFromChangedHandler",
+              "type": "executeFunction"
+            },
+            {
+              "id": "onMessageSendHandler",
+              "type": "executeFunction"
+            }
+          ]
+        }
+      ],
+      "autoRunEvents": [
+        {
+          "requirements": {
+            "capabilities": [
+              {
+                "name": "Mailbox",
+                "minVersion": "1.13"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "newMessageComposeCreated",
+              "actionId": "onNewMessageComposeHandler"
+            },
+            {
+              "type": "messageFromChanged",
+              "actionId": "onMessageFromChangedHandler"
+            },
+            {
+              "type": "messageSending",
+              "actionId": "onMessageSendHandler",
+              "options": {
+                "sendMode": "softBlock"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        {
+          "name": "Mailbox.ReadWrite.User",
+          "type": "Delegated"
+        }
+      ]
+    }
+  },
+  "webApplicationInfo": {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "resource": "api://localhost:3000/00000000-0000-0000-0000-000000000000"
+  }
+}

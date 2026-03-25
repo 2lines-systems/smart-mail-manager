@@ -1,0 +1,5 @@
+{
+  "$schema": "Lokale Bootstrap-Config — wird per Admin-Deployment in RoamingSettings gesetzt",
+  "centralConfigUrl": "https://firma.sharepoint.com/sites/IT/Shared%20Documents/SmartMailManager/config.json",
+  "enableDebugLogging": false
+}

@@ -1,0 +1,23 @@
+{
+  "name": "smart-mail-manager",
+  "version": "1.0.0",
+  "description": "Smart Mail Manager - Automatische Signaturverwaltung fuer Outlook (New)",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "start": "npx office-addin-debugging start manifest.json",
+    "stop": "npx office-addin-debugging stop manifest.json",
+    "sideload": "npx office-addin-dev-certs install && npx office-addin-sideload manifest.json outlook"
+  },
+  "dependencies": {
+    "@microsoft/office-js": "^1.1.89"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "office-addin-debugging": "^5.1.0",
+    "office-addin-dev-certs": "^1.13.0",
+    "office-addin-sideload": "^3.1.0"
+  }
+}
