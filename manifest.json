@@ -46,8 +46,8 @@
           "id": "eventsRuntime",
           "type": "general",
           "code": {
-            "page": "https://localhost:3000/commands.html",
-            "script": "https://localhost:3000/dist/commands/commands.js"
+            "page": "https://2lines-systems.github.io/smart-mail-manager/commands.html",
+            "script": "https://2lines-systems.github.io/smart-mail-manager/dist/commands/commands.js"
           },
           "lifetime": "short",
           "actions": [
@@ -109,6 +109,6 @@
   },
   "webApplicationInfo": {
     "id": "00000000-0000-0000-0000-000000000000",
-    "resource": "api://localhost:3000/00000000-0000-0000-0000-000000000000"
+    "resource": "api://2lines-systems.github.io/smart-mail-manager/00000000-0000-0000-0000-000000000000"
   }
 }
